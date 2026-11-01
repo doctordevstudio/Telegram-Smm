@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="text-3xl font-bold text-white mb-8">Dashboard <span class="text-cyan">Overview</span></h2>
+
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-10">
+    <div class="glass p-6 rounded-xl border-l-4 border-l-cyan hover-glow transition-all">
+        <h3 class="text-gray-400 text-xs font-bold uppercase tracking-wider">Total Users</h3>
+        <p class="text-4xl font-black mt-2 text-white">{{ stats.total_users }}</p>
+    </div>
+    <div class="glass p-6 rounded-xl border-l-4 border-l-neon hover-glow transition-all">
+        <h3 class="text-gray-400 text-xs font-bold uppercase tracking-wider">Total Earnings</h3>
+        <p class="text-4xl font-black mt-2 text-white">₹{{ stats.total_earnings }}</p>
+    </div>
+    <div class="glass p-6 rounded-xl border-l-4 border-l-blue-500 hover-glow transition-all">
+        <h3 class="text-gray-400 text-xs font-bold uppercase tracking-wider">Total Orders</h3>
+        <p class="text-4xl font-black mt-2 text-white">{{ stats.total_orders }}</p>
+    </div>
+    <div class="glass p-6 rounded-xl border-l-4 border-l-pink-500 hover-glow transition-all">
+        <h3 class="text-gray-400 text-xs font-bold uppercase tracking-wider">Active Sessions</h3>
+        <p class="text-4xl font-black mt-2 text-white">{{ stats.sessions }}</p>
+    </div>
+</div>
+
+<div class="glass rounded-xl p-6 border border-gray-800">
+    <h3 class="text-xl font-bold mb-6 text-white border-b border-gray-800 pb-4">Recent Users</h3>
+    <div class="overflow-x-auto">
+        <table class="w-full text-left text-sm">
+            <thead>
+                <tr class="text-gray-400 uppercase text-xs tracking-wider border-b border-gray-800">
+                    <th class="pb-3">Chat ID</th>
+                    <th class="pb-3">Name</th>
+                    <th class="pb-3">Balance</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for uid, u in users.items() %}
+                <tr class="border-b border-gray-800/50 hover:bg-white/5 transition-colors">
+                    <td class="py-4 text-cyan font-mono">{{ u.chat_id }}</td>
+                    <td class="py-4 font-bold">{{ u.full_name }}</td>
+                    <td class="py-4 text-green-400">₹{{ u.wallet_balance }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

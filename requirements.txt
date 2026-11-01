@@ -1,0 +1,8 @@
+aiogram
+firebase-admin
+python-dotenv
+telethon
+fastapi
+uvicorn
+jinja2
+python-multipart

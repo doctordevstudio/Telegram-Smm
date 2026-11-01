@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="text-3xl font-bold text-white mb-8">System <span class="text-pink-500">Settings</span></h2>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+    <div class="glass p-6 rounded-xl">
+        <h3 class="text-xl font-bold text-white mb-4">Payment Configuration</h3>
+        <form action="/api/update_settings" method="POST" class="space-y-4">
+            <input type="text" name="upi_id" value="{{ settings.get('upi_id', '') }}" placeholder="UPI ID (e.g. yourname@okhdfc)" class="w-full bg-dark border border-gray-700 rounded p-3 text-white focus:border-pink-500">
+            <button type="submit" class="w-full bg-pink-500 text-white font-bold py-3 rounded hover:bg-pink-600 transition-colors">SAVE UPI CONFIG</button>
+        </form>
+    </div>
+
+    <div class="glass p-6 rounded-xl">
+        <h3 class="text-xl font-bold text-white mb-4 flex justify-between items-center">
+            API Credentials
+            <span class="text-xs bg-gray-800 px-2 py-1 rounded">{{ settings.get('api_credentials', [])|length }} Configured</span>
+        </h3>
+        <form action="/api/add_api" method="POST" class="space-y-4">
+            <input type="number" name="api_id" placeholder="API ID (Number)" required class="w-full bg-dark border border-gray-700 rounded p-3 text-white focus:border-pink-500">
+            <input type="text" name="api_hash" placeholder="API HASH (String)" required class="w-full bg-dark border border-gray-700 rounded p-3 text-white focus:border-pink-500">
+            <button type="submit" class="w-full bg-gray-700 text-white font-bold py-3 rounded hover:bg-gray-600 transition-colors">ADD CREDENTIAL</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
