@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login - SMM Panel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>body { background-color: #0b1121; color: white; }</style>
+</head>
+<body class="flex items-center justify-center h-screen">
+    <div class="bg-[#162032] p-10 rounded-2xl border border-gray-800 shadow-[0_0_30px_rgba(168,85,247,0.15)] w-96 text-center">
+        <h2 class="text-3xl font-black text-[#06b6d4] mb-8 uppercase tracking-widest drop-shadow-[0_0_10px_rgba(6,182,212,0.5)]">SMM LOGIN</h2>
+        <form action="/login" method="POST" class="space-y-5">
+            <input type="text" name="username" placeholder="Username" class="w-full bg-[#0b1121] border border-gray-700 rounded-lg p-3 text-white focus:outline-none focus:border-[#a855f7]">
+            <input type="password" name="password" placeholder="Password" class="w-full bg-[#0b1121] border border-gray-700 rounded-lg p-3 text-white focus:outline-none focus:border-[#a855f7]">
+            <button type="submit" class="w-full bg-gradient-to-r from-[#a855f7] to-[#06b6d4] text-white font-bold py-3 rounded-lg hover:opacity-90 transition-opacity">ACCESS PANEL</button>
+        </form>
+    </div>
+</body>
+</html>
