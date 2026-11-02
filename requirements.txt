@@ -1,0 +1,10 @@
+aiogram
+fastapi
+uvicorn[standard]
+python-multipart
+firebase-admin
+python-dotenv
+telethon
+cryptography
+python-socks[asyncio]
+tzdata
