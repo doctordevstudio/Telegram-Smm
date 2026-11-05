@@ -7,5 +7,5 @@ python-dotenv
 telethon
 cryptography
 python-socks[asyncio]
-pytgcalls
+py-tgcalls
 tzdata
