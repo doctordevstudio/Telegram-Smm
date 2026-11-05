@@ -1,0 +1,35 @@
+# Render Blueprint - New + > Blueprint, point it at your repo. Fill the `sync: false` secrets in the dashboard.
+# Uses Docker (not the native Python runtime) so ffmpeg is available for the Live Stream service.
+services:
+  - type: web
+    name: telegram-smm
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: TIMEZONE
+        value: Asia/Kolkata
+      - key: BOT_TOKEN
+        sync: false
+      - key: OWNER_ID
+        sync: false
+      - key: FIREBASE_DB_URL
+        sync: false
+      - key: FIREBASE_CRED_JSON
+        sync: false
+      - key: SESSION_KEY
+        generateValue: true      # encrypts sessions at rest - NEVER change it after importing sessions
+      - key: SECRET_KEY
+        generateValue: true      # signs the admin-panel (owner) login cookie
+      - key: ADMIN_USERNAME
+        value: owner
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: API_ID
+        sync: false
+      - key: API_HASH
+        sync: false
+      - key: PROXY_URL
+        sync: false

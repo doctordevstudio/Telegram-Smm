@@ -1,0 +1,10 @@
+.env
+.env.*
+serviceAccount.json
+*.json.key
+*.session
+__pycache__/
+*.pyc
+.git/
+.gitignore
+README.md
