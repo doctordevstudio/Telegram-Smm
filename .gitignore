@@ -1,5 +1,0 @@
-.env
-serviceAccount.json
-__pycache__/
-*.pyc
-*.session
